@@ -651,17 +651,6 @@ function App() {
     setIsLoading(false);
   };
 
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    setCurrentUser(null);
-    setShowLogin(false);
-    setShowCart(false);
-    setShowMyOrders(false);
-    setShowTracking(false);
-    setShowCheckout(false);
-    alert('You have been logged out successfully. 👋');
-  };
-
   const checkAuth = () => {
     if (!isAuthenticated) {
       setShowLogin(true);
