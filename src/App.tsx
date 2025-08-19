@@ -454,7 +454,6 @@ function App() {
   const [trackingOrder, setTrackingOrder] = useState<any>(null);
   const [showMyOrders, setShowMyOrders] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser] = useState<any>(null);
   const [showSignup, setShowSignup] = useState(false);
   const [trackingForm, setTrackingForm] = useState({
     orderId: '',
@@ -640,7 +639,6 @@ function App() {
     
     if (user) {
       setIsAuthenticated(true);
-      setCurrentUser(user);
       setShowLogin(false);
       setLoginForm({ email: '', password: '' });
       alert(`Welcome back, ${user.name}! 🎉`);
@@ -722,7 +720,6 @@ function App() {
 
     // Auto-login the new user
     setIsAuthenticated(true);
-    setCurrentUser(newUser);
     setShowSignup(false);
     setSignupForm({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' });
     alert(`Welcome ${newUser.name}! Your account has been created successfully! 🎉`);
