@@ -1322,7 +1322,9 @@ function App() {
                 </ul>
               </div>
               <p className="login-footer">
-                Don't have an account? <a href="javascript:void(0)" className="signup-link" onClick={handleSignupClick}>Sign up</a>
+                Don't have an account? <button type="button" className="signup-link" onClick={handleSignupClick} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>
+                  Sign up
+                </button>
               </p>
             </div>
           </div>
@@ -1462,7 +1464,9 @@ function App() {
                 </button>
               </form>
               <p className="signup-footer">
-                Already have an account? <a href="javascript:void(0)" className="login-link" onClick={handleBackToLogin}>Sign in</a>
+                Already have an account? <button type="button" className="login-link" onClick={handleBackToLogin} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>
+                  Sign in
+                </button>
               </p>
             </div>
           </div>
