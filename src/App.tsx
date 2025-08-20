@@ -455,6 +455,7 @@ function App() {
   const [showMyOrders, setShowMyOrders] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [trackingForm, setTrackingForm] = useState({
     orderId: '',
     email: ''
@@ -505,6 +506,8 @@ function App() {
     setShowCart(false);
     setShowCollection(false);
     setShowCheckout(false);
+    // Close mobile menu after selection
+    setIsMobileMenuOpen(false);
   };
 
   const handleProductClick = (product: any) => {
@@ -745,7 +748,19 @@ function App() {
   if (showCheckout && checkoutProduct) {
   return (
       <div className="ecom-app">
-        <aside className="sidebar">
+        <div className="mobile-topbar">
+          <div className="topbar-brand"><span role="img" aria-label="logo">🛍️</span> <span>Your Store</span></div>
+          <button
+            type="button"
+            className="hamburger-btn"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+        <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
             <div className="logo-section">
               <div className="logo">🛍️</div>
@@ -1062,7 +1077,19 @@ function App() {
     
     return (
       <div className="ecom-app">
-        <aside className="sidebar">
+        <div className="mobile-topbar">
+          <div className="topbar-brand"><span role="img" aria-label="logo">🛍️</span> <span>Your Store</span></div>
+          <button
+            type="button"
+            className="hamburger-btn"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+        <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
             <div className="logo-section">
               <div className="logo">🛍️</div>
@@ -1140,7 +1167,19 @@ function App() {
   if (showCart) {
     return (
       <div className="ecom-app">
-        <aside className="sidebar">
+        <div className="mobile-topbar">
+          <div className="topbar-brand"><span role="img" aria-label="logo">🛍️</span> <span>Your Store</span></div>
+          <button
+            type="button"
+            className="hamburger-btn"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+        <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
             <div className="logo-section">
               <div className="logo">🛍️</div>
@@ -1216,7 +1255,19 @@ function App() {
   if (showLogin) {
     return (
       <div className="ecom-app">
-        <aside className="sidebar">
+        <div className="mobile-topbar">
+          <div className="topbar-brand"><span role="img" aria-label="logo">🛍️</span> <span>Your Store</span></div>
+          <button
+            type="button"
+            className="hamburger-btn"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+        <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-header">
             <div className="logo-section">
               <div className="logo">🛍️</div>
@@ -1956,7 +2007,19 @@ function App() {
   // Main Product List Page
   return (
     <div className="ecom-app">
-      <aside className="sidebar">
+      <div className="mobile-topbar">
+        <div className="topbar-brand"><span role="img" aria-label="logo">🛍️</span> <span>Your Store</span></div>
+        <button
+          type="button"
+          className="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          ☰
+        </button>
+      </div>
+      <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
           <div className="logo-section">
             <div className="logo">🛍️</div>

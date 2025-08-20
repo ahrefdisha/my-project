@@ -43,6 +43,32 @@
   background: #f7f7fa;
 }
 
+/* Mobile top bar for hamburger */
+.mobile-topbar { display: none; }
+.hamburger-btn { display: none; }
+
+@media (max-width: 900px) {
+  .mobile-topbar {
+    display: flex;
+    width: 100%;
+    background: #22223b;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .mobile-topbar .topbar-brand { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .hamburger-btn { display: inline-block; background: transparent; color: #fff; border: none; font-size: 1.6rem; cursor: pointer; }
+  /* Hide sidebar by default on mobile, show when .open */
+  .sidebar { display: none; width: 100%; min-height: unset; }
+  .sidebar.open { display: block; }
+  .sidebar ul { display: block; width: 100%; }
+  .sidebar-buttons { flex-direction: column; gap: 0.5rem; }
+}
+
 .sidebar {
   width: 220px;
   background: #22223b;
